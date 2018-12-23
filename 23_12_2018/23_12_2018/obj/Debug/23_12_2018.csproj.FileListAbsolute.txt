@@ -1,0 +1,7 @@
+C:\Users\FaridAz\source\repos\23_12_2018\23_12_2018\obj\Debug\23_12_2018.csprojResolveAssemblyReference.cache
+C:\Users\FaridAz\source\repos\23_12_2018\23_12_2018\obj\Debug\23_12_2018.csproj.CoreCompileInputs.cache
+C:\Users\FaridAz\source\repos\23_12_2018\23_12_2018\bin\Debug\23_12_2018.exe.config
+C:\Users\FaridAz\source\repos\23_12_2018\23_12_2018\bin\Debug\23_12_2018.exe
+C:\Users\FaridAz\source\repos\23_12_2018\23_12_2018\bin\Debug\23_12_2018.pdb
+C:\Users\FaridAz\source\repos\23_12_2018\23_12_2018\obj\Debug\23_12_2018.exe
+C:\Users\FaridAz\source\repos\23_12_2018\23_12_2018\obj\Debug\23_12_2018.pdb
