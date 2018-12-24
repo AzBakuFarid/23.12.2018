@@ -27,11 +27,12 @@ namespace _23_12_2018
                         string sb = $"insert into items (items) values ('{stack.Pop()}'); ";
                         SqlCommand cmd = new SqlCommand(sb.ToString(), conn);
                         var resultI = cmd.ExecuteNonQuery();
+                        Console.WriteLine("inDBWriter 1 -> " + resultI);
+
                         conn.Close();
                     }
 
                 }
-                Console.WriteLine("inDBWriter 1");
 
             });
             Task task4 = Task.Run(() =>
@@ -45,11 +46,12 @@ namespace _23_12_2018
                         string sb = $"insert into items (items) values ('{stack.Pop()}'); ";
                         SqlCommand cmd = new SqlCommand(sb.ToString(), conn);
                         var resultI = cmd.ExecuteNonQuery();
+                        Console.WriteLine("inDBWriter 4 -> "+resultI);
                         conn.Close();
                     }
 
                 }
-                Console.WriteLine("inDBWriter 4");
+                
 
             });
             Task task5 = Task.Run(() =>
@@ -63,11 +65,12 @@ namespace _23_12_2018
                         string sb = $"insert into items (items) values ('{stack.Pop()}'); ";
                         SqlCommand cmd = new SqlCommand(sb.ToString(), conn);
                         var resultI = cmd.ExecuteNonQuery();
+                        Console.WriteLine("inDBWriter 5 -> " + resultI);
+
                         conn.Close();
                     }
 
                 }
-                Console.WriteLine("inDBWriter 5");
 
             });
             Task task2 = Task.Run(() =>
@@ -81,11 +84,12 @@ namespace _23_12_2018
                         string sb = $"insert into items (items) values ('{stack.Pop()}'); ";
                         SqlCommand cmd = new SqlCommand(sb.ToString(), conn);
                         var resultI = cmd.ExecuteNonQuery();
+                        Console.WriteLine("inDBWriter 2 -> " + resultI);
+
                         conn.Close();
                     }
 
                 }
-                Console.WriteLine("inDBWriter 2");
 
             });
             Task task3 = Task.Run(() =>
@@ -99,11 +103,12 @@ namespace _23_12_2018
                         string sb = $"insert into items (items) values ('{stack.Pop()}'); ";
                         SqlCommand cmd = new SqlCommand(sb.ToString(), conn);
                         var resultI = cmd.ExecuteNonQuery();
+                        Console.WriteLine("inDBWriter 3 -> " + resultI);
+
                         conn.Close();
                     }
 
                 }
-                Console.WriteLine("inDBWriter 3");
 
             });
 
