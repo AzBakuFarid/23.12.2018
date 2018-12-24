@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
@@ -12,43 +12,26 @@ namespace _23_12_2018
     {
         public static object Locker = new object();
 
-        public static async Task<Stack<string>> readFromFileAsync(string filename)
-        {
-            Stack<string> list = new Stack<string>();
-            await Task.Run(() =>
-            {
-                using (StreamReader sr = new StreamReader(filename))
-                {
-                    string line = null;
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        list.Push(line);
-                    }
-                }
-            });
-            return list;
-
-
-
-        }
+       
         public static async Task writeToDB(Stack<string> stack)
         {
-            string sb = null;
+            
             Task task1 = Task.Run(() =>
             {
                 if (stack.Count > 0)
                 {
                     lock (Locker)
                     {
-                        SqlConnection conn = new SqlConnection(@"Data Source=CACR12\SERVER2018;User id=sa; Password=1Qaz2wsx; Initial Catalog=items_23/12/2018");
+                        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;User id=sa; Password=1Qaz2wsx; Initial Catalog=items_23/12/2018");
                         conn.Open();
-                        sb = $"insert into items (items) values ('{stack.Pop()}'); ";
+                        string sb = $"insert into items (items) values ('{stack.Pop()}'); ";
                         SqlCommand cmd = new SqlCommand(sb.ToString(), conn);
                         var resultI = cmd.ExecuteNonQuery();
                         conn.Close();
                     }
 
                 }
+                Console.WriteLine("inDBWriter 1");
 
             });
             Task task4 = Task.Run(() =>
@@ -57,15 +40,16 @@ namespace _23_12_2018
                 {
                     lock (Locker)
                     {
-                        SqlConnection conn = new SqlConnection(@"Data Source=CACR12\SERVER2018;User id=sa; Password=1Qaz2wsx; Initial Catalog=items_23/12/2018");
+                        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;User id=sa; Password=1Qaz2wsx; Initial Catalog=items_23/12/2018");
                         conn.Open();
-                        sb = $"insert into items (items) values ('{stack.Pop()}'); ";
+                        string sb = $"insert into items (items) values ('{stack.Pop()}'); ";
                         SqlCommand cmd = new SqlCommand(sb.ToString(), conn);
                         var resultI = cmd.ExecuteNonQuery();
                         conn.Close();
                     }
 
                 }
+                Console.WriteLine("inDBWriter 4");
 
             });
             Task task5 = Task.Run(() =>
@@ -74,15 +58,16 @@ namespace _23_12_2018
                 {
                     lock (Locker)
                     {
-                        SqlConnection conn = new SqlConnection(@"Data Source=CACR12\SERVER2018;User id=sa; Password=1Qaz2wsx; Initial Catalog=items_23/12/2018");
+                        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;User id=sa; Password=1Qaz2wsx; Initial Catalog=items_23/12/2018");
                         conn.Open();
-                        sb = $"insert into items (items) values ('{stack.Pop()}'); ";
+                        string sb = $"insert into items (items) values ('{stack.Pop()}'); ";
                         SqlCommand cmd = new SqlCommand(sb.ToString(), conn);
                         var resultI = cmd.ExecuteNonQuery();
                         conn.Close();
                     }
 
                 }
+                Console.WriteLine("inDBWriter 5");
 
             });
             Task task2 = Task.Run(() =>
@@ -91,15 +76,16 @@ namespace _23_12_2018
                 {
                     lock (Locker)
                     {
-                        SqlConnection conn = new SqlConnection(@"Data Source=CACR12\SERVER2018;User id=sa; Password=1Qaz2wsx; Initial Catalog=items_23/12/2018");
+                        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;User id=sa; Password=1Qaz2wsx; Initial Catalog=items_23/12/2018");
                         conn.Open();
-                        sb = $"insert into items (items) values ('{stack.Pop()}'); ";
+                        string sb = $"insert into items (items) values ('{stack.Pop()}'); ";
                         SqlCommand cmd = new SqlCommand(sb.ToString(), conn);
                         var resultI = cmd.ExecuteNonQuery();
                         conn.Close();
                     }
 
                 }
+                Console.WriteLine("inDBWriter 2");
 
             });
             Task task3 = Task.Run(() =>
@@ -108,15 +94,16 @@ namespace _23_12_2018
                 {
                     lock (Locker)
                     {
-                        SqlConnection conn = new SqlConnection(@"Data Source=CACR12\SERVER2018;User id=sa; Password=1Qaz2wsx; Initial Catalog=items_23/12/2018");
+                        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;User id=sa; Password=1Qaz2wsx; Initial Catalog=items_23/12/2018");
                         conn.Open();
-                        sb = $"insert into items (items) values ('{stack.Pop()}'); ";
+                        string sb = $"insert into items (items) values ('{stack.Pop()}'); ";
                         SqlCommand cmd = new SqlCommand(sb.ToString(), conn);
                         var resultI = cmd.ExecuteNonQuery();
                         conn.Close();
                     }
 
                 }
+                Console.WriteLine("inDBWriter 3");
 
             });
 
