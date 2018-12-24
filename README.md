@@ -1,1 +1,3 @@
+stack_items.txt faylini bin>debug papkasina atanda isleyir...
+
 # 23.12.2018
