@@ -10,12 +10,27 @@ namespace _23_12_2018
     {
         static void Main(string[] args)
         {
-            var isWriting = true;
-            var items = Methods.readFromFileAsync(@"C:\Users\FaridAz\Desktop\stack_items.txt");
-            while (isWriting)
+            var mustRun = true;
+            string path = "stack_items.txt";
+            Stack<string> list = new Stack<string>();
+            Task.Run(() =>
             {
-                Methods.writeToDB(items.Result);
-                if (items.Result.Count==0) { isWriting = false; }
+                //Thread.Sleep(30);
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    string line = null;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        list.Push(line);
+                        Console.WriteLine("instack");
+                    }
+                }
+            });
+            while (mustRun)
+            {
+                Methods.writeToDB(list);
+                Console.WriteLine(list.Count);
+                if (list.Count==0) { mustRun = false; }
             }
         }
     }
